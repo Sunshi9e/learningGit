@@ -2,7 +2,7 @@ import os
 import json
 from datetime import datetime
 from transaction import Transaction
-from budget_utils import group_by_category, print_summary, load_transactions, save_transactions
+from budget_utils import print_summary, load_transactions, save_transactions
 
 
 
@@ -27,8 +27,11 @@ def main():
                 transactions.append(transaction)
                 save_transactions(transactions)
                 print("Transaction added!")
-            except ValueError:
-                print("Invalid input. Please try again.")
+            except ValueError as ve:
+                print(f"Invalid input: {ve}")
+            except Exception as e:
+                print(f"An error occurred: {e}")
+            
         elif choice == "2":
             print_summary(transactions)
         elif choice == "3":
