@@ -38,3 +38,17 @@ def view_books(inventory):
         print(f"Price : ${book.price}")
         print(f"Stock : {book.stock}")
         print("-" * 20)
+        
+def search_book(inventory):
+    title = input("Enter title to search: ").lower()
+    found = False
+    for b in inventory:
+        if title in b.title.lower():
+            print("-------------------------")
+            print(f"Title : {b.title}")
+            print(f"Author: {b.author}")
+            print(f"Price : ${b.price:.2f}")
+            print(f"Stock : {b.stock}")
+            found = True
+    if not found:
+        print("No matching book found.")

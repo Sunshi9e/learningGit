@@ -26,8 +26,12 @@ def main():
             view_books(inventory)
 
         elif choice == "3":
-            print("Goodbye!")
+            search_book(inventory)
             break
+
+        elif choice == "3":
+            print("Goodbye!")
+
 
         else:
             print("Invalid choice. Try again.")
