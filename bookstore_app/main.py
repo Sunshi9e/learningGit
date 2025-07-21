@@ -25,9 +25,11 @@ def main():
         elif choice == "2":
             view_books(inventory)
 
+        elif choice == "3":
+            search_book(inventory)
+            break
 
-
-        elif choice == "4":
+         elif choice == "4":
             update_stock(inventory)
 
         elif choice == "5":
