@@ -38,3 +38,26 @@ def view_books(inventory):
         print(f"Price : ${book.price}")
         print(f"Stock : {book.stock}")
         print("-" * 20)
+
+
+
+
+
+def update_stock(inventory):
+    title = input("Enter title to update stock: ").lower()
+    for b in inventory:
+        if title in b.title.lower():
+            try:
+                qty = int(input("Enter new stock quantity: "))
+                if qty < 0:
+                    print("Stock cannot be negative.")
+                    return
+                b.stock = qty
+                print(f"Stock updated for '{b.title}'")
+                return
+            except ValueError:
+                print("Invalid quantity.")
+                return
+    print("Book not found.")
+
+
