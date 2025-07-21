@@ -28,6 +28,9 @@ def add_student():
         students.append(new_student)
         save_students(students)
         print(f"{name} added successfully.")
+    
+
+
 
 def view_students():
     students = load_students()
@@ -68,6 +71,8 @@ def update_student():
     save_students(students)
     print(f"{student.name}'s record updated.")
 
+
+
 def delete_student():
     name = input("Enter student name to delete: ")
     students = load_students()
@@ -80,6 +85,8 @@ def delete_student():
     students.remove(student)
     save_students(students)
     print(f"{name} has been deleted.")
+
+
 
 def main():
     while True:
