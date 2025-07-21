@@ -37,7 +37,8 @@ def view_books(inventory):
         print(f"Author: {book.author}")
         print(f"Price : ${book.price}")
         print(f"Stock : {book.stock}")
-        print("-" * 20)
+        print("-" * 20 + "\n")
+
 def search_book(inventory):
     title = input("Enter title to search: ").lower()
     found = False

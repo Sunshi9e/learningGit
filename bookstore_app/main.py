@@ -11,25 +11,27 @@ def main():
         print("3. Search Book")
         print("4. Update Stock")
         print("5. Exit")
-        choice = input("Choose an option (1-3): ")
+        choice = input("Choose an option (1-5): ")
 
         if choice == "1":
             title = input("Enter book title: ")
             author = input("Enter author: ")
-            price = input("Enter price: ")
-            stock = input("Enter stock quantity: ")
-            book = Book(title, author, price, stock)
-            add_book(book, inventory)
-            print("Book added!")
+            try:
+                price = float(input("Enter price: "))
+                stock = int(input("Enter stock quantity: "))
+                book = Book(title, author, price, stock)
+                add_book(book, inventory)
+                print("Book added!")
+            except ValueError:
+                print("Invalid price or stock quantity. Please enter numbers.")
 
         elif choice == "2":
             view_books(inventory)
 
         elif choice == "3":
             search_book(inventory)
-            break
 
-         elif choice == "4":
+        elif choice == "4":
             update_stock(inventory)
 
         elif choice == "5":

@@ -1,5 +1,3 @@
-import math
-
 class Book:
     def __init__(self, title, author, price, stock):
         self.title = title
